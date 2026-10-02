@@ -61,6 +61,7 @@ class Toy():
     # - Nothing
     # Side effect
     # - changes the self.colour to new_colour
+    # - throws TypeError() if new_colour not string
     def set_colour(self, new_colour):
         pass
 
@@ -89,4 +90,14 @@ assert toy.get_colour() == 'brown'
 toy.set_colour('red')
 
 assert toy.get_colour() == 'red'
+
+# scenario 5
+toy = Toy('Teddy', 'brown')
+assert toy.get_colour() == 'brown'
+with pytest.raises(TypeError) as error:
+    toy.set_colour(3.2)
+
+error_message = str(error.value)
+
+assert error_message == "Only strings can be used to set colour"
 ```

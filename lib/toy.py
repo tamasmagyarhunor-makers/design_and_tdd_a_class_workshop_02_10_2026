@@ -10,4 +10,6 @@ class Toy:
         return self.colour
     
     def set_colour(self, new_colour):
+        if not isinstance(new_colour, str):
+            raise TypeError('Only strings can be used to set colour')
         self.colour = new_colour
