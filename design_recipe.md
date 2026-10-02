@@ -56,12 +56,12 @@ class Toy():
         pass
 
     # Parameters
-    # - colour, string
+    # - new_colour, string
     # Returns
     # - Nothing
     # Side effect
-    # - changes the self.colour to colour
-    def set_colour(self, colour):
+    # - changes the self.colour to new_colour
+    def set_colour(self, new_colour):
         pass
 
 
