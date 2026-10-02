@@ -1,4 +1,5 @@
 from lib.toy import Toy
+from lib.wrong_toy_colour_type_error import WrongToyColourTypeError
 import pytest
 
 # scenario 1
@@ -30,7 +31,7 @@ def test_toy_can_change_its_colour():
 def test_toy_raises_typeeror_when_not_string_used_to_change_colour():
     toy = Toy('Teddy', 'brown')
     assert toy.get_colour() == 'brown'
-    with pytest.raises(TypeError) as error:
+    with pytest.raises(WrongToyColourTypeError) as error:
         toy.set_colour(3.2)
 
     error_message = str(error.value)

@@ -1,3 +1,5 @@
+from lib.wrong_toy_colour_type_error import WrongToyColourTypeError
+
 class Toy:
     def __init__(self, name, colour):
         self.name = name
@@ -11,5 +13,5 @@ class Toy:
     
     def set_colour(self, new_colour):
         if not isinstance(new_colour, str):
-            raise TypeError('Only strings can be used to set colour')
+            raise WrongToyColourTypeError('Only strings can be used to set colour')
         self.colour = new_colour

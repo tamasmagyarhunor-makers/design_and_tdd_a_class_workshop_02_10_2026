@@ -1,0 +1,2 @@
+class WrongToyColourTypeError(TypeError):
+    pass
